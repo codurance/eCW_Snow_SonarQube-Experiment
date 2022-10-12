@@ -5,7 +5,18 @@ package experiment;
 
 public class App {
     public String getGreeting() {
-        return "Hello World!";
+        String a = "Fred";
+        a += " Likes";
+        a += " the" + "numbers:";
+
+        for ( int i = 1; i<= 23; i++ ) {
+            if ( i < 2 ) {
+                a += ",";
+            }
+            a += "" + i;
+        }
+
+        return a;
     }
 
     public static void main(String[] args) {
