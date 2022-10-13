@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -uo pipefail
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 cd "$DIR"
@@ -7,11 +7,14 @@ cd "$DIR"
 
 
 if [[ $(arch) == 'arm64' ]]; then
-    IMG='mwizner/sonarqube:8.9.5-community'
+    IMG='mwizner/sonarqube:9.4.0-community'
+    IMG='davealdon/sonarqube-with-docker-and-m1-macs'
 else
     IMG='sonarqube:lts'
 fi
 
+docker kill sonarqube
+docker rm sonarqube
 docker run -d \
     --rm \
     --name sonarqube \
