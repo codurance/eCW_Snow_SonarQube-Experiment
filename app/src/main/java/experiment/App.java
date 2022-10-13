@@ -5,6 +5,20 @@ package experiment;
 
 public class App {
     public String getGreeting() {
+        String a = oldGreeting();
+
+        /* TODO: Next steps
+         - make SampleClassInNewModule accessible in this class
+         - run an analysis filtering *only*
+            - One single class: SampleClassInApp
+            - One whole module: newmodule
+        */
+
+        SampleClassInApp sampleClassInApp = new SampleClassInApp();
+        return sampleClassInApp.hello();
+    }
+
+    private static String oldGreeting() {
         String a = "Fred";
         a += " Likes";
         a += " the" + "numbers:";
@@ -15,7 +29,6 @@ public class App {
             }
             a += "" + i;
         }
-
         return a;
     }
 

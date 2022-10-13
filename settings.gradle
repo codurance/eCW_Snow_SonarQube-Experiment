@@ -9,3 +9,5 @@
 
 rootProject.name = 'SonarQubeExperiment'
 include('app')
+include('newmodule')
+
